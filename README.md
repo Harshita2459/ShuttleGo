@@ -309,32 +309,34 @@ You can create a .env file in the root directory of the project to set these var
 
 # Installation
 ## Clone the repository
-   https://github.com/Harshita2459/ShuttleGo.git
+  ```
+  https://github.com/Harshita2459/ShuttleGo.git
+```
 
-## Install Dependencies
+## Install Dependencies:-
 
 ### Navigate to the Backend directory:
-cd ShuttleGo-backend
+`cd ShuttleGo-backend`
 
 ### Install backend Dependencies
-npm i
+`npm i`
 
 ### Navigate to the project root directory:
- cd..  cd..
+ `cd..`  `cd..`
 
 ### Navigate to the frontend directory
-cd ShuttleGo-frontend
+`cd ShuttleGo-frontend`
 
 ### Install frontend dependencies:
-npm i
+`npm i`
 
-## Run Locally
+## Run Locally:-
 
 ### Start the frontend server:
-npm start
+`npm start`
 
 ### Start the Backend server
-npm run dev 
+`npm run dev`
 
 # API Reference
 
@@ -350,11 +352,11 @@ npm run dev
 | GET     | /bookings/user/:userId | Get all bookings by user ID                | -                                                    | Array of bookings                                     |
 | PUT     | /bookings/:id          | Update a booking by ID                     | `{ status: 'pending'/'accepted'/'declined' }`       | `{ message: 'Booking updated successfully', booking: <updatedBookingObject> }` |
 | DELETE  | /bookings/:id          | Delete a booking by ID                     | -                                                    | `{ message: 'Booking deleted successfully', booking: <deletedBookingObject> }` |
-| POST    | /conf/newConf          | Create a new conference                    | `{ name, email, campus, phoneNo, image }`           | `{ message: "Success", conference: <conferenceObject> }` |
-| GET     | /conf/getConf          | Get all conferences                        | -                                                    | Array of conferences                                 |
-| GET     | /conf/getid/:id        | Get conference by ID                       | -                                                    | Conference object                                    |
-| PUT     | /conf/updateConf/:id   | Update conference acceptance by ID         | -                                                    | Updated conference object                            |
-| DELETE  | /conf/deleteConf/:id   | Delete conference by ID                    | -                                                    | Deleted conference object                            |
+| POST    | /conf/newConf          | Create a new conf                    | `{ name, email, campus, phoneNo, image }`           | `{ message: "Success", conf: <confObject> }` |
+| GET     | /conf/getConf          | Get all conf                        | -                                                    | Array of confs                                 |
+| GET     | /conf/getid/:id        | Get conf by ID                       | -                                                    | Conf object                                    |
+| PUT     | /conf/updateConf/:id   | Update conf acceptance by ID         | -                                                    | Updated conf object                            |
+| DELETE  | /conf/deleteConf/:id   | Delete conf by ID                    | -                                                    | Deleted conf object                            |
 
 
 ### The middleware function are responsible for:-
