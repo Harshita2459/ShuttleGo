@@ -309,11 +309,12 @@ You can create a .env file in the root directory of the project to set these var
 
 # Installation
 ## Clone the repository
+   https://github.com/Harshita2459/ShuttleGo.git
 
 ## Install Dependencies
 
 ### Navigate to the Backend directory:
-cd Backend backup\server
+cd ShuttleGo-backend
 
 ### Install backend Dependencies
 npm i
@@ -322,7 +323,7 @@ npm i
  cd..  cd..
 
 ### Navigate to the frontend directory
-cd 
+cd ShuttleGo-frontend
 
 ### Install frontend dependencies:
 npm i
