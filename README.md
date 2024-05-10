@@ -1,4 +1,5 @@
 # ShuttleGo
+# FRONTEND DOCUMENTATION
 
 ShuttleGo is a website created using the MERN and is focused to provide the University students, the direct access to the University’s shuttle service without any middlemen (teachers, Hostel Wardens) whenever in emergency. It also provides the facilities to the teachers and the hostel authorities to book shuttle through it. 
 
@@ -278,3 +279,90 @@ Fetches shuttle booking data from the backend API.
 Provides a simple interface for transport authorities to manage bookings.
 
 This website solves the problem of the University students of not able to access the shuttle services directly. It will help them to access the shuttle by directly contacting the transport authority and request for the shuttle whenever in emergency by providing valid proof.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# BACKEND DOCUMENTATION
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## This is a MERN Based project, backend built with NodeJS and database through MongoDB. It uses several libraries, including:
+
+### Express - a fast, minimalist web framework for Node.js
+
+### Bcrypt - a library to help hash passwords
+
+### Jsonwebtoken - a library to generate JWT tokens
+
+### Mongoose - a MongoDB object modeling tool
+
+# Environment Variables
+To run this project, you will need to add the following environment variables to your .env file
+
+## DATABASE: the MongoDB connection string
+
+## SECRET_KEY: the secret used to sign JWT token
+
+## PORT: Contains the port on which server will run
+
+You can create a .env file in the root directory of the project to set these variables.
+
+# Installation
+## Clone the repository
+
+## Install Dependencies
+
+### Navigate to the Backend directory:
+cd Backend backup\server
+
+### Install backend Dependencies
+npm i
+
+### Navigate to the project root directory:
+ cd..  cd..
+
+### Navigate to the frontend directory
+cd 
+
+### Install frontend dependencies:
+npm i
+
+## Run Locally
+
+### Start the frontend server:
+npm start
+
+### Start the Backend server
+npm run dev 
+
+# API Reference
+
+| Methods | Route                  | Description                                | Request Body                                         | Response Body                                         |
+| ------- | ---------------------- | ------------------------------------------ | ---------------------------------------------------- | ----------------------------------------------------- |
+| POST    | /user/register         | Register a new user                        | `{ name, email, password, dob, phone, role }`       | `{ msg: "user added", id: <userId> }`               |
+| POST    | /user/login            | Login a user                               | `{ email, password }`                               | `{ message: "Login successful", user: <userObject> }`|
+| GET     | /user/all              | Get all users                              | -                                                    | Array of users `{ name, email, password, role }`     |
+| POST    | /createShuttle         | Create a new shuttle                       | `{ name, maxCount, campus, phoneNo }`               | `{ message: "Success" }`                             |
+| GET     | /shuttles              | Get all shuttles                           | -                                                    | Array of shuttles                                     |
+| POST    | /bookings/bookings     | Create a new booking                       | `{ name, email, campus, phoneNo, image, user }`     | `{ message: 'Booking created successfully', booking: <bookingObject> }` |
+| GET     | /bookings/bookings     | Get all bookings                           | -                                                    | Array of bookings                                     |
+| GET     | /bookings/user/:userId | Get all bookings by user ID                | -                                                    | Array of bookings                                     |
+| PUT     | /bookings/:id          | Update a booking by ID                     | `{ status: 'pending'/'accepted'/'declined' }`       | `{ message: 'Booking updated successfully', booking: <updatedBookingObject> }` |
+| DELETE  | /bookings/:id          | Delete a booking by ID                     | -                                                    | `{ message: 'Booking deleted successfully', booking: <deletedBookingObject> }` |
+| POST    | /conf/newConf          | Create a new conference                    | `{ name, email, campus, phoneNo, image }`           | `{ message: "Success", conference: <conferenceObject> }` |
+| GET     | /conf/getConf          | Get all conferences                        | -                                                    | Array of conferences                                 |
+| GET     | /conf/getid/:id        | Get conference by ID                       | -                                                    | Conference object                                    |
+| PUT     | /conf/updateConf/:id   | Update conference acceptance by ID         | -                                                    | Updated conference object                            |
+| DELETE  | /conf/deleteConf/:id   | Delete conference by ID                    | -                                                    | Deleted conference object                            |
+
+
+### The middleware function are responsible for:-
+
+* User authentication using JSON Web Tokens (JWTs)
+* User registration
+* User Login
+* Adding Shuttles
+* Retrieving Shuttles
+* Sending and Receiving Shuttle requests.
+* Accepting and rejecting requests.
+* Storing data in the database.
